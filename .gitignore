@@ -1,0 +1,15 @@
+HELP.md
+target/
+/.mvn/*
+
+node
+node_modules
+build
+.gitignore
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.txt
