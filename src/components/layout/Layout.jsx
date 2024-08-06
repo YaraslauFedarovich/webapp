@@ -17,6 +17,7 @@ export function Layout() {
 
   useEffect(() => {
     webApp.ready()
+    webApp.expand()
   }, [])
 
   useEffect(() => {
