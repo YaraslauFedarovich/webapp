@@ -59,29 +59,3 @@ button > a {
     color: black;
     padding: 9px 25px;
 }
-
-//ios
-.apple {
-    padding: 20px;
-
-    h3 {
-        color: var(--tg-theme-text-color);
-        font-size: 50px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-
-    .select {
-        height: 140px;
-        font-size: 30px;
-        width: 100%;
-    }
-
-    input[type="checkbox"] {
-        height: 15px;
-        margin-top: 10px;
-        margin-left: 15px;
-        transform: scale(2.5);
-        width: 15px;
-    }
-}
