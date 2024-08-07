@@ -18,12 +18,11 @@ export function Layout() {
   return (<React.Fragment>
     <Switch>
       <Route exact path={"/"}>
-        <StartPage/>
+        <StartPage query={query}/>
       </Route>
       <Route path={"/game"}>
         <Game webApp={webApp}/>
       </Route>
     </Switch>
-    <div>{query}</div>
   </React.Fragment>);
 }
