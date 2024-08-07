@@ -24,5 +24,6 @@ export function Layout() {
         <Game webApp={webApp}/>
       </Route>
     </Switch>
+    <div>{query}</div>
   </React.Fragment>);
 }
