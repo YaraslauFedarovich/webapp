@@ -12,7 +12,7 @@ export function Layout() {
     tg.expand()
 
     console.log(tg.initDataUnsafe)
-  }, [])
+  }, [tg])
 
   return (<React.Fragment>
     <Switch>
