@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react"
-import styles from "../../styles.module.scss"
+import styles from "../styles/styles.module.scss"
 
 const webApp = window.Telegram.WebApp;
 
