@@ -19,7 +19,7 @@ export function Layout() {
         <StartPage />
       </Route>
       <Route path={"/game"}>
-        <Game webApp={webApp}/>
+        <Game />
       </Route>
     </Switch>
   </React.Fragment>);
