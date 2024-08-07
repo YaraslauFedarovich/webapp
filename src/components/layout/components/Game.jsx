@@ -14,11 +14,6 @@ export function Game({ webApp }) {
   }, [count, reversed, select, level, webApp])
 
   useEffect(() => {
-    webApp.ready()
-    webApp.expand()
-  }, [webApp])
-
-  useEffect(() => {
     if ((count === 0 || count > 50) && (select === "g" || select === "p")) {
       webApp.MainButton.disable()
     } else {

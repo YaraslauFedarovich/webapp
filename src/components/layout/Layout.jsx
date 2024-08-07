@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Route, Switch } from "react-router-dom";
 import { Game } from "./components/Game";
 import { StartPage } from "./components/StartPage";
@@ -6,6 +6,12 @@ import { StartPage } from "./components/StartPage";
 const webApp = window.Telegram.WebApp;
 
 export function Layout() {
+
+  useEffect(() => {
+    webApp.ready()
+    webApp.expand()
+  }, [])
+
    return (<React.Fragment>
     <Switch>
       <Route exact path={"/"}>
