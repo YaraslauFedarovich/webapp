@@ -10,14 +10,13 @@ export function Layout() {
   useEffect(() => {
     webApp.ready()
     webApp.expand()
-    console.log(webApp.initData)
     console.log(webApp.initDataUnsafe)
   }, [])
 
   return (<React.Fragment>
     <Switch>
       <Route exact path={"/"}>
-        <StartPage query={"query"}/>
+        <StartPage />
       </Route>
       <Route path={"/game"}>
         <Game webApp={webApp}/>
