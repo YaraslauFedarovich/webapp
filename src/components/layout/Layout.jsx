@@ -9,6 +9,7 @@ export function Layout() {
   const [reversed, setReversed] = useState(false)
   const [showCount, setShowCount] = useState(false)
   const [select, setSelect] = useState("r")
+  const [platform, setPlatform] = useState("hello")
 
   const onSendData = useCallback(() => {
     const data = select + (reversed ? "-r" : "") + " " + level + " " + (select === "g" || select === "p" ? count : "")
@@ -18,6 +19,7 @@ export function Layout() {
   useEffect(() => {
     webApp.ready()
     webApp.expand()
+    setPlatform(webApp.platform)
   }, [])
 
   useEffect(() => {
@@ -80,5 +82,6 @@ export function Layout() {
       <h3>Count</h3>
       <input value={count} type={"number"} onChange={(e) => handleCountChange(e.target.value)} className={styles.input}/>
     </React.Fragment>}
+    <div>{platform}</div>
   </div>);
 }
