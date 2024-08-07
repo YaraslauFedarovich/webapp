@@ -15,7 +15,7 @@ export function Loader({ isLoading, delay }) {
     } else {
       setVisible(true)
     }
-  }, [isLoading])
+  }, [isLoading, delay, timeout])
 
   return (isVisible ?
       <div className={styles.background}>
