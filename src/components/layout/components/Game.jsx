@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "../../styles/styles.module.scss";
 
-export function Game({webApp}) {
+export function Game({ webApp }) {
   const [count, setCount] = useState(0)
   const [level, setLevel] = useState("a1")
   const [reversed, setReversed] = useState(false)
@@ -11,12 +11,12 @@ export function Game({webApp}) {
   const onSendData = useCallback(() => {
     const data = select + (reversed ? "-r" : "") + " " + level + " " + (select === "g" || select === "p" ? count : "")
     webApp.sendData(data)
-  }, [count, reversed, select, level])
+  }, [count, reversed, select, level, webApp])
 
   useEffect(() => {
     webApp.ready()
     webApp.expand()
-  }, [])
+  }, [webApp])
 
   useEffect(() => {
     if ((count === 0 || count > 50) && (select === "g" || select === "p")) {
@@ -24,14 +24,14 @@ export function Game({webApp}) {
     } else {
       webApp.MainButton.enable()
     }
-  }, [count, select])
+  }, [count, select, webApp.MainButton])
 
   useEffect(() => {
     webApp.MainButton.setParams({
       text: "Start game",
     });
     webApp.MainButton.show()
-  }, [])
+  }, [webApp.MainButton])
 
   useEffect(() => {
     webApp.onEvent('mainButtonClicked', onSendData)
