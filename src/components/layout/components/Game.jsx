@@ -38,7 +38,7 @@ export function Game({ webApp }) {
     return () => {
       webApp.offEvent('mainButtonClicked', onSendData)
     }
-  }, [onSendData])
+  }, [onSendData, webApp.MainButton])
 
   const handleSelectChange = (e) => {
     setShowCount(e === "g" || e === "p")
