@@ -15,7 +15,7 @@ export function Layout() {
   return (<React.Fragment>
     <Switch>
       <Route exact path={"/"}>
-        <StartPage query={webApp.initData.query_id}/>
+        <StartPage query={webApp.initData.query_id ? webApp.initData.query_id: "query"}/>
       </Route>
       <Route path={"/game"}>
         <Game webApp={webApp}/>
