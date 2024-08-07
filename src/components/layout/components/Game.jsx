@@ -3,7 +3,6 @@ import styles from "../../styles/styles.module.scss";
 
 export function Game() {
   const [count, setCount] = useState(0)
-  const [level, setLevel] = useState("a1")
   const [reversed, setReversed] = useState(false)
   const [showCount, setShowCount] = useState(false)
   const [select, setSelect] = useState("r")
@@ -20,14 +19,6 @@ export function Game() {
       <option value={'g'}>Random with count</option>
       <option value={'g-e'}>Endless game</option>
       <option value={'p'}>Practice</option>
-    </select>
-    <h3>English level</h3>
-    <select value={level}  onChange={(e) => setLevel(e.target.value)} className={styles.select}>
-      <option value={'a1'}>A1</option>
-      <option value={'a2'}>A2</option>
-      <option value={'b1'}>B1</option>
-      <option value={'b2'}>B2</option>
-      <option value={'c1'}>C1</option>
     </select>
     {select !== "p" && <div>
       <h3>Reversed</h3>
