@@ -10,7 +10,8 @@ export function Layout() {
   useEffect(() => {
     webApp.ready()
     webApp.expand()
-    console.log(webApp)
+    console.log(webApp.initData)
+    console.log(webApp.initDataUnsafe)
   }, [])
 
   return (<React.Fragment>
