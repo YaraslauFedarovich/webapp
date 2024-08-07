@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/styles.module.scss";
 
 export function Game({ webApp }) {
@@ -8,45 +8,9 @@ export function Game({ webApp }) {
   const [showCount, setShowCount] = useState(false)
   const [select, setSelect] = useState("r")
 
-  const onSendData = useCallback(() => {
-    const data = select + (reversed ? "-r" : "") + " " + level + " " + (select === "g" || select === "p" ? count : "")
-    webApp.sendData(data)
-  }, [count, reversed, select, level, webApp])
-
-  useEffect(() => {
-    if ((count === 0 || count > 50) && (select === "g" || select === "p")) {
-      webApp.MainButton.disable()
-    } else {
-      webApp.MainButton.enable()
-    }
-  }, [count, select, webApp.MainButton])
-
-  useEffect(() => {
-    webApp.MainButton.setParams({
-      text: "Start game",
-    });
-    webApp.MainButton.show()
-  }, [webApp.MainButton])
-
-  useEffect(() => {
-    webApp.onEvent('mainButtonClicked', onSendData)
-    return () => {
-      webApp.offEvent('mainButtonClicked', onSendData)
-    }
-  }, [onSendData, webApp])
-
   const handleSelectChange = (e) => {
     setShowCount(e === "g" || e === "p")
     setSelect(e)
-  }
-
-  const handleCountChange = (e) => {
-    setCount(e)
-    if (e > 0 && e <= 50) {
-      webApp.MainButton.enable()
-    } else {
-      webApp.MainButton.disable()
-    }
   }
 
   return (<div className={styles.form}>
