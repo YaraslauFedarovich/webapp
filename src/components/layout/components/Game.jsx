@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/styles.module.scss";
 
 export function Game() {
-  const [count, setCount] = useState("")
+  const [count, setCount] = useState(0)
   const [level, setLevel] = useState("a1")
   const [reversed, setReversed] = useState(false)
   const [showCount, setShowCount] = useState(false)
@@ -35,7 +35,7 @@ export function Game() {
     </div>}
     {showCount && <React.Fragment>
       <h3>Count</h3>
-      <input value={count} type={"number"} onChange={(e) => setCount(e.target.value)} className={styles.input}/>
+      <input value={count} type={"number"} onChange={(e) => setCount(parseInt(e.target.value))} className={styles.input}/>
     </React.Fragment>}
   </div>);
 }

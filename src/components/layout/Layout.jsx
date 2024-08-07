@@ -2,15 +2,16 @@ import React, { useEffect } from "react"
 import { Route, Switch } from "react-router-dom";
 import { Game } from "./components/Game";
 import { StartPage } from "./components/StartPage";
-
-const webApp = window.Telegram.WebApp;
+import { useTelegram } from "../hooks/useTelegram";
 
 export function Layout() {
 
   useEffect(() => {
-    webApp.ready()
-    webApp.expand()
-    console.log(webApp.initDataUnsafe)
+    const {tg} = useTelegram()
+    tg.ready()
+    tg.expand()
+
+    console.log(tg.initDataUnsafe)
   }, [])
 
   return (<React.Fragment>
