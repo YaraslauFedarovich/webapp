@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/styles.module.scss";
+import styles from "../styles.module.scss";
 
 export function Game() {
   const [count, setCount] = useState(0)

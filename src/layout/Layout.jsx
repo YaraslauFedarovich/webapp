@@ -5,10 +5,11 @@ import { StartPage } from "./components/StartPage";
 import { useTelegram } from "../hooks/useTelegram";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { setUser } from "../../store/lgb/actions";
+import { setLoading, setUser } from "../store/lgb/actions";
 import { Level } from "./components/Level";
+import { Loader } from "../loader/Loader";
 
-function Layout({ user, actions }) {
+function Layout({ user, loading, actions }) {
   const {tg} = useTelegram()
 
   useEffect(() => {
@@ -19,6 +20,7 @@ function Layout({ user, actions }) {
   }, [tg])
 
   return (<React.Fragment>
+    <Loader isLoading={loading}/>
     <Switch>
       <Route exact path={"/"}>
         <StartPage actions={actions}/>
@@ -27,18 +29,19 @@ function Layout({ user, actions }) {
         <Game />
       </Route>
       <Route path={"/level"}>
-        <Level />
+        <Level actions={actions}/>
       </Route>
     </Switch>
   </React.Fragment>);
 }
 
 const mapStateToProps = ({ lgb }) => ({
-  user: lgb.user
+  user: lgb.user,
+  loading: lgb.isLoading
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ setUser }, dispatch)
+  actions: bindActionCreators({ setUser, setLoading }, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout)

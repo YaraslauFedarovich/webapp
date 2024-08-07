@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "../../styles/styles.module.scss";
+import styles from "../styles.module.scss";
 import { Link } from "react-router-dom";
 
-export function Level() {
+export function Level({ actions }) {
 
   const [level, setLevel] = useState("a1")
 
@@ -15,6 +15,6 @@ export function Level() {
       <option value={'b2'}>B2</option>
       <option value={'c1'}>C1</option>
     </select>
-    <button className={styles.stepButton}><Link to={"/game"}>Confirm</Link></button>
+    <button className={styles.stepButton} ><Link to={"/game"}>Confirm</Link></button>
   </div>
 }
