@@ -5,9 +5,9 @@ import { StartPage } from "./components/StartPage";
 import { useTelegram } from "../hooks/useTelegram";
 
 export function Layout() {
+  const {tg} = useTelegram()
 
   useEffect(() => {
-    const {tg} = useTelegram()
     tg.ready()
     tg.expand()
 
