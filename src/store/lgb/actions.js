@@ -26,32 +26,22 @@ export const getUserProfile = (id) => (dispatch) => {
    first_name: "Yaroslav",
    last_name: "Vladimirovich",
    username: "yaraslau_the_wise",
+   level: "a1",
    stats: {streak: 999}
  }))
 }
 
 export const saveUserLevel = (user) => (dispatch) => {
   // post("/save-user-level", user).then(resp => {
-  //   dispatch(setUser(resp))
+  //   dispatch(setUserLevel(resp.level))
   // })
 
-  dispatch(setUser({
-    id: 876667511,
-    first_name: "Yaroslav",
-    last_name: "Vladimirovich",
-    username: "yaraslau_the_wise",
-    level: "c1"
-  }))
 
-  // setTimeout(() => {
-  //   dispatch(setUser({
-  //     id: 876667511,
-  //     first_name: "Yaroslav",
-  //     last_name: "Vladimirovich",
-  //     username: "yaraslau_the_wise",
-  //     level: "c1"
-  //   }));
-  //
-  //   dispatch(setLoading(false));
-  // }, 2000);
+  dispatch(setLoading(true))
+
+  setTimeout(() => {
+    dispatch(setUserLevel("b2"))
+
+    dispatch(setLoading(false))
+  }, 1000)
 }

@@ -16,7 +16,7 @@ export function Game({ isLoading }) {
   }
 
   return (<div className={styles.gameContainer}>
-    <SlideLeftAnimation>
+    {!isLoading && <SlideLeftAnimation>
       <div className={styles.game}>
         <h3>Game types</h3>
         <select value={select}  onChange={(e) => handleSelectChange(e.target.value)} className={styles.select}>
@@ -34,7 +34,7 @@ export function Game({ isLoading }) {
           <input value={count} type={"number"} onChange={(e) => setCount(parseInt(e.target.value))} className={styles.input}/>
         </React.Fragment>}
       </div>
-    </SlideLeftAnimation>
+    </SlideLeftAnimation>}
     <button className={styles.stepButton}>{
       isLoading
         ? <ButtonLoader loading={isLoading}/>

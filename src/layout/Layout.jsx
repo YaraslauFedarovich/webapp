@@ -18,7 +18,7 @@ function Layout({ user, loading, actions }) {
   }, [tg])
 
   return (<React.Fragment>
-    <Loader isLoading={loading}/>
+    {/*<Loader isLoading={loading}/>*/}
     <Switch>
       <Route exact path={"/"}>
         <StartPage actions={actions} user={user} tgUser={tg.initDataUnsafe.user}/>
