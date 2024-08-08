@@ -3,9 +3,12 @@ import styles from "../styles.module.scss";
 import { Link } from "react-router-dom";
 import { SlideLeftAnimation } from "../../animation/SlideLeftAnimation";
 
-export function Level({ actions }) {
-
+export function Level({ actions, user }) {
   const [level, setLevel] = useState("a1")
+
+  function saveUserLevel() {
+    actions.saveUserLevel({id: user.id, level: level})
+  }
 
   return <div className={styles.levelPage}>
     <SlideLeftAnimation>
@@ -20,6 +23,6 @@ export function Level({ actions }) {
         </select>
       </div>
     </SlideLeftAnimation>
-    <button className={styles.stepButton} ><Link to={"/game"}>Confirm</Link></button>
+    <button className={styles.stepButton} onClick={saveUserLevel}><Link to={"/game"}>Confirm</Link></button>
   </div>
 }

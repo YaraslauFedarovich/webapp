@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles.module.scss";
 import { Link } from "react-router-dom";
 import { ShowAnimation } from "../../animation/ShowAnimation";
 
-export function StartPage({ actions }) {
+export function StartPage({ actions, user, tgUser }) {
+
+  useEffect(() => {
+    actions.getUserProfile(876667511)
+  }, [actions])
+
 
   return (<div className={styles.startGameContainer}>
     <div className={styles.startPage}>

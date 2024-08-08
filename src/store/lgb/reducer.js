@@ -11,6 +11,8 @@ const reducer =  (state = initialState, action) => {
              return { ...state, user: action.payload }
     case ACTIONS.SET_LOADING:
              return { ...state, isLoading: action.payload }
+    case ACTIONS.SET_USER_LEVEL:
+             return { ...state, user: {...state.user, level: action.payload} }
     default:
       return state
   }

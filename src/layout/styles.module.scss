@@ -1,6 +1,7 @@
 body {
     margin: 0;
     width: auto;
+    background-color: #17212b;
 }
 
 .game {
@@ -14,7 +15,8 @@ body {
 }
 
 h3 {
-    color: var(--tg-theme-text-color);
+    //color: var(--tg-theme-text-color);
+    color: #f5f5f5;
     margin-bottom: 0;
 }
 
