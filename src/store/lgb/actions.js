@@ -58,7 +58,7 @@ export const getGameState = (id) => (dispatch) => {
   // })
 
   dispatch(setGameState({
-    current_game: "g",
+    current_game: null,
     count: 5,
     is_reversed: false,
     current_level: "b1",
