@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styles from "../styles.module.scss";
-import { Link } from "react-router-dom";
 import { ShowAnimation } from "../../animation/ShowAnimation";
+import { StepButton } from "./StepButton";
 
-export function StartPage({ actions, user, tgUser }) {
+export function StartPage({ actions, user, tgUser, isLoading }) {
 
   useEffect(() => {
     actions.getUserProfile(876667511)
@@ -15,9 +15,7 @@ export function StartPage({ actions, user, tgUser }) {
      <ShowAnimation>
        <div className={styles.labelFlex}><h3> START PAGE</h3></div>
      </ShowAnimation>
-      <button className={styles.stepButton}>
-        <Link to={"/level"}>Next</Link>
-      </button>
+      <StepButton isLoading={isLoading} path={"/level"} text={"Next"} />
     </div>
   </div>)
 }

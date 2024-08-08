@@ -21,7 +21,7 @@ function Layout({ user, loading, actions }) {
     {/*<Loader isLoading={loading}/>*/}
     <Switch>
       <Route exact path={"/"}>
-        <StartPage actions={actions} user={user} tgUser={tg.initDataUnsafe.user}/>
+        <StartPage actions={actions} user={user} tgUser={tg.initDataUnsafe.user} isLoading={loading}/>
       </Route>
       <Route path={"/game"}>
         <Game isLoading={loading}/>
