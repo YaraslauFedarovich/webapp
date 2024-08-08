@@ -18,7 +18,7 @@ export function SelectGame({ isLoading, actions, user }) {
     actions.saveGameState({
       current_game: select,
       count: count,
-      is_reversed: reversed,
+      reversed: reversed,
       current_level: user.level,
       tg_id: 876667511
     })
