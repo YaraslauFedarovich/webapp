@@ -24,9 +24,9 @@ function Layout({ user, loading, actions, gameState }) {
   }, [actions])
 
   useEffect(() => {
-    if (gameState?.current_game) {
-      history.push("/play")
-    }
+    // if (gameState?.current_game) {
+    //   history.push("/play")
+    // }
   }, [gameState, history])
 
   return (<React.Fragment>
