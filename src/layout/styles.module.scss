@@ -7,11 +7,16 @@ body {
 .game {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
 }
 
 .gameContainer {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    height: 100vh;
+    justify-content: space-between;
 }
 
 h3 {

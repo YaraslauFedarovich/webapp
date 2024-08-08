@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "../styles.module.scss";
 import { SlideLeftAnimation } from "../../animation/SlideLeftAnimation";
+import { ButtonLoader } from "../../loader/ButtonLoader";
+import { Link } from "react-router-dom";
 
-export function Game() {
+export function Game({ isLoading }) {
   const [count, setCount] = useState(0)
   const [reversed, setReversed] = useState(false)
   const [showCount, setShowCount] = useState(false)
@@ -33,5 +35,10 @@ export function Game() {
         </React.Fragment>}
       </div>
     </SlideLeftAnimation>
+    <button className={styles.stepButton}>{
+      isLoading
+        ? <ButtonLoader loading={isLoading}/>
+        : <Link to={"/game"}>Start</Link>}
+    </button>
   </div>);
 }

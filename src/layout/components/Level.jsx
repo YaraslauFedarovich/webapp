@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styles from "../styles.module.scss";
 import { Link } from "react-router-dom";
 import { SlideLeftAnimation } from "../../animation/SlideLeftAnimation";
+import { ButtonLoader } from "../../loader/ButtonLoader";
 
-export function Level({ actions, user }) {
+export function Level({ actions, user, isLoading }) {
   const [level, setLevel] = useState("a1")
 
   function saveUserLevel() {
@@ -23,6 +24,10 @@ export function Level({ actions, user }) {
         </select>
       </div>
     </SlideLeftAnimation>
-    <button className={styles.stepButton} onClick={saveUserLevel}><Link to={"/game"}>Confirm</Link></button>
+    <button className={styles.stepButton} onClick={saveUserLevel}>{
+      isLoading
+      ? <ButtonLoader loading={isLoading}/>
+      : <Link to={"/game"}>Confirm</Link>}
+    </button>
   </div>
 }

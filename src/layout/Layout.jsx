@@ -24,10 +24,10 @@ function Layout({ user, loading, actions }) {
         <StartPage actions={actions} user={user} tgUser={tg.initDataUnsafe.user}/>
       </Route>
       <Route path={"/game"}>
-        <Game />
+        <Game isLoading={loading}/>
       </Route>
       <Route path={"/level"}>
-        <Level actions={actions} user={user}/>
+        <Level actions={actions} user={user} isLoading={loading}/>
       </Route>
     </Switch>
   </React.Fragment>);

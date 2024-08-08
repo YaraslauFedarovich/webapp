@@ -1,5 +1,5 @@
 import { ACTIONS } from "./constant";
-import { post, get } from "../../api/api-handler";
+//import { post, get } from "../../api/api-handler";
 
 export const setUser = (user) => ({
   type: ACTIONS.SET_USER,
@@ -42,4 +42,16 @@ export const saveUserLevel = (user) => (dispatch) => {
     username: "yaraslau_the_wise",
     level: "c1"
   }))
+
+  // setTimeout(() => {
+  //   dispatch(setUser({
+  //     id: 876667511,
+  //     first_name: "Yaroslav",
+  //     last_name: "Vladimirovich",
+  //     username: "yaraslau_the_wise",
+  //     level: "c1"
+  //   }));
+  //
+  //   dispatch(setLoading(false));
+  // }, 2000);
 }
