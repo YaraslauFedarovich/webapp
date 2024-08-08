@@ -23,6 +23,6 @@ export function Level({ actions, user, isLoading }) {
         </select>
       </div>
     </SlideLeftAnimation>
-    <StepButton isLoading={isLoading} path={"/game"} text={"Confirm"} onClick={saveUserLevel}/>
+    <StepButton isLoading={isLoading} path={"/game"} text={"CONFIRM"} onClick={saveUserLevel}/>
   </div>
 }

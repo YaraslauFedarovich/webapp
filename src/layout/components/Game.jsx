@@ -34,6 +34,6 @@ export function Game({ isLoading }) {
         </React.Fragment>}
       </div>
     </SlideLeftAnimation>}
-    <StepButton isLoading={isLoading} path={"/start-game"} text={"Start"}/>
+    <StepButton isLoading={isLoading} path={"/play"} text={"START"}/>
   </div>);
 }
