@@ -3,7 +3,7 @@ import styles from "../styles.module.scss";
 import { SlideLeftAnimation } from "../../animation/SlideLeftAnimation";
 import { StepButton } from "./StepButton";
 
-export function Game({ isLoading }) {
+export function SelectGame({ isLoading, actions, user }) {
   const [count, setCount] = useState(0)
   const [reversed, setReversed] = useState(false)
   const [showCount, setShowCount] = useState(false)
@@ -12,6 +12,16 @@ export function Game({ isLoading }) {
   const handleSelectChange = (e) => {
     setShowCount(e === "g" || e === "p")
     setSelect(e)
+  }
+
+  const saveSelectedGame = () => {
+    actions.saveGameState({
+      current_game: select,
+      count: count,
+      is_reversed: reversed,
+      current_level: user.level,
+      tg_id: 876667511
+    })
   }
 
   return (<div className={styles.gameContainer}>
@@ -34,6 +44,6 @@ export function Game({ isLoading }) {
         </React.Fragment>}
       </div>
     </SlideLeftAnimation>}
-    <StepButton isLoading={isLoading} path={"/play"} text={"START"}/>
+    <StepButton isLoading={isLoading} path={"/play"} text={"START"} onClick={saveSelectedGame}/>
   </div>);
 }

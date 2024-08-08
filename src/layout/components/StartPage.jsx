@@ -1,30 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles.module.scss";
 import { ShowAnimation } from "../../animation/ShowAnimation";
 import { StepButton } from "./StepButton";
-//import { useHistory } from "react-router-dom";
 
-export function StartPage({ actions, user, tgUser, isLoading }) {
-
- // const history = useHistory()
-
-  useEffect(() => {
-    actions.getUserProfile(876667511)
-  }, [actions])
-
-  // useEffect(() => {
-  //   if (user.id) {
-  //     history.push("/play")
-  //   }
-  // }, [user])
-
+export function StartPage({ isLoading }) {
 
   return (<div className={styles.startGameContainer}>
-    <div className={styles.startPage}>
-     <ShowAnimation>
-       <div className={styles.labelFlex}><h3> START PAGE</h3></div>
-     </ShowAnimation>
+    <ShowAnimation className={styles.startPage}>
+      <div className={styles.labelFlex}><h3> START PAGE</h3></div>
       <StepButton isLoading={isLoading} path={"/level"} text={"NEXT"}/>
-    </div>
+    </ShowAnimation>
   </div>)
 }

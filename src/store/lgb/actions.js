@@ -1,5 +1,5 @@
 import { ACTIONS } from "./constant";
-//import { post, get } from "../../api/api-handler";
+import { post, get } from "../../api/api-handler";
 
 export const setUser = (user) => ({
   type: ACTIONS.SET_USER,
@@ -9,6 +9,11 @@ export const setUser = (user) => ({
 export const setUserLevel = (level) => ({
   type: ACTIONS.SET_USER_LEVEL,
   payload: level
+})
+
+export const setGameState = (game) => ({
+  type: ACTIONS.SET_GAME_STATE,
+  payload: game
 })
 
 export const setLoading = (loading) => ({
@@ -31,9 +36,41 @@ export const getUserProfile = (id) => (dispatch) => {
  }))
 }
 
+export const saveGameState = (game) => (dispatch) => {
+  // dispatch(setLoading(true))
+  // post("/save-game-state/", game).then(resp => {
+  //   dispatch(setGameState(resp))
+  //   dispatch(setLoading(false))
+  // })
+
+  dispatch(setGameState({
+    current_game: "g",
+    count: 5,
+    is_reversed: false,
+    current_level: "b1",
+    tg_id: 876667511
+  }))
+}
+
+export const getGameState = (id) => (dispatch) => {
+  // get("/get-game-state/", id).then(resp => {
+  //   dispatch(setGameState(resp))
+  // })
+
+  dispatch(setGameState({
+    current_game: "g",
+    count: 5,
+    is_reversed: false,
+    current_level: "b1",
+    tg_id: 876667511
+  }))
+}
+
 export const saveUserLevel = (user) => (dispatch) => {
+  // dispatch(setLoading(true))
   // post("/save-user-level", user).then(resp => {
   //   dispatch(setUserLevel(resp.level))
+  //   dispatch(setLoading(false))
   // })
 
 
