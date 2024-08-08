@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getUserProfile, saveUserLevel, setLoading, setUser } from "../store/lgb/actions";
 import { Level } from "./components/Level";
-import { Loader } from "../loader/Loader";
+// import { Loader } from "../loader/Loader";
 
 function Layout({ user, loading, actions }) {
   const {tg} = useTelegram()
